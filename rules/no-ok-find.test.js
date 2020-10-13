@@ -19,6 +19,14 @@ ruleTester.run("no-ok-find", rule, {
     "assert.ok(notFind('.foo'))",
     "assert.ok(find('.foo', '.bar'))",
     "assert.ok(find())",
+
+    "notAssert.notOk(find('.foo'))",
+    "assert.notOk",
+    "assert.notOk()",
+    "assert.notOk(1)",
+    "assert.notOk(notFind('.foo'))",
+    "assert.notOk(find('.foo', '.bar'))",
+    "assert.notOk(find())",
   ],
   invalid: [
     {
@@ -40,6 +48,29 @@ ruleTester.run("no-ok-find", rule, {
           message: rule.message,
           column: 1,
           endColumn: 24,
+        },
+      ],
+    },
+
+    {
+      code: "assert.notOk(find('.foo'), 'bar')",
+      output: "assert.dom('.foo').doesNotExist('bar')",
+      errors: [
+        {
+          message: rule.message,
+          column: 1,
+          endColumn: 34,
+        },
+      ],
+    },
+    {
+      code: "assert.notOk(find('.foo'))",
+      output: "assert.dom('.foo').doesNotExist()",
+      errors: [
+        {
+          message: rule.message,
+          column: 1,
+          endColumn: 27,
         },
       ],
     },

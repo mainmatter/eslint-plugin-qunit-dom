@@ -15,7 +15,13 @@ module.exports = {
         if (node.object.type !== "Identifier") return;
         if (node.object.name !== "assert") return;
         if (node.property.type !== "Identifier") return;
-        if (node.property.name !== "ok") return;
+        let inverted = false;
+
+        if (node.property.name === "notOk") {
+          inverted = true;
+        } else if (node.property.name !== "ok") {
+          return;
+        }
 
         if (!node.parent) return;
         if (node.parent.type !== "CallExpression") return;
@@ -35,10 +41,11 @@ module.exports = {
             let messageArgText = messageArg
               ? sourceCode.getText(messageArg)
               : "";
+            let assertion = inverted ? "doesNotExist" : "exists";
 
             return fixer.replaceText(
               node.parent,
-              `assert.dom(${findArgText}).exists(${messageArgText})`
+              `assert.dom(${findArgText}).${assertion}(${messageArgText})`
             );
           },
         });

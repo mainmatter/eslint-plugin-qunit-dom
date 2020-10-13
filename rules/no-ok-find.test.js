@@ -16,10 +16,14 @@ ruleTester.run("no-ok-find", rule, {
     "assert.ok",
     "assert.ok()",
     "assert.ok(1)",
+    "assert.ok(notFind('.foo'))",
+    "assert.ok(find('.foo', '.bar'))",
+    "assert.ok(find())",
   ],
   invalid: [
     {
       code: "assert.ok(find('.foo'), 'bar')",
+      output: "assert.dom('.foo').exists('bar')",
       errors: [
         {
           message: rule.message,
@@ -30,6 +34,7 @@ ruleTester.run("no-ok-find", rule, {
     },
     {
       code: "assert.ok(find('.foo'))",
+      output: "assert.dom('.foo').exists()",
       errors: [
         {
           message: rule.message,

@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - "v*"
+    tags:
+      - "v*"
+  pull_request: {}
+  schedule:
+    - cron:  '0 3 * * *' # daily, at 3am
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+#  lint:
+#    name: Linting
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#      - uses: actions/setup-node@v2
+#        with:
+#          node-version: 14.x
+#
+#      - run: yarn install
+#      - run: yarn lint
+
+  test-node:
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
+    name: Tests (Node.js ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: yarn install
+      - run: yarn test --coverage
+
+  test-eslint:
+    strategy:
+      matrix:
+        eslint-version: [7.0.0]
+
+    name: Tests (ESLint ${{ matrix.eslint-version }})
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - run: yarn install
+      - run: yarn add --dev eslint@${{ matrix.eslint-version }}
+      - run: yarn test
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

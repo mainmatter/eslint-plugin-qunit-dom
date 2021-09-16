@@ -7,9 +7,9 @@
     "test": "jest"
   },
   "devDependencies": {
-    "eslint": "^7.11.0",
-    "jest": "^26.5.3",
-    "prettier": "^2.1.2"
+    "eslint": "7.11.0",
+    "jest": "26.5.3",
+    "prettier": "2.1.2"
   },
   "peerDependencies": {
     "eslint": "^7.11.0"

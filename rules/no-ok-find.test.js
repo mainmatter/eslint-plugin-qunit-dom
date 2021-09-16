@@ -1,32 +1,32 @@
-const { RuleTester } = require("eslint");
+const { RuleTester } = require('eslint');
 
-const rule = require("./no-ok-find");
+const rule = require('./no-ok-find');
 
 let ruleTester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
   },
 });
 
-ruleTester.run("no-ok-find", rule, {
+ruleTester.run('no-ok-find', rule, {
   valid: [
     "notAssert.ok(find('.foo'))",
     "assert.foo(find('.bar'))",
-    "assert.ok",
-    "assert.ok()",
-    "assert.ok(1)",
+    'assert.ok',
+    'assert.ok()',
+    'assert.ok(1)',
     "assert.ok(notFind('.foo'))",
     "assert.ok(find('.foo', '.bar'))",
-    "assert.ok(find())",
+    'assert.ok(find())',
 
     "notAssert.notOk(find('.foo'))",
-    "assert.notOk",
-    "assert.notOk()",
-    "assert.notOk(1)",
+    'assert.notOk',
+    'assert.notOk()',
+    'assert.notOk(1)',
     "assert.notOk(notFind('.foo'))",
     "assert.notOk(find('.foo', '.bar'))",
-    "assert.notOk(find())",
+    'assert.notOk(find())',
   ],
   invalid: [
     {

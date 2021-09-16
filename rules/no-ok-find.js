@@ -1,10 +1,10 @@
-const message = "use assert.dom(...).exists() instead assert.ok(find(...))";
+const message = 'use assert.dom(...).exists() instead assert.ok(find(...))';
 
 module.exports = {
   message,
 
   meta: {
-    fixable: "code",
+    fixable: 'code',
   },
 
   create(context) {
@@ -12,24 +12,24 @@ module.exports = {
 
     return {
       MemberExpression(node) {
-        if (node.object.type !== "Identifier") return;
-        if (node.object.name !== "assert") return;
-        if (node.property.type !== "Identifier") return;
+        if (node.object.type !== 'Identifier') return;
+        if (node.object.name !== 'assert') return;
+        if (node.property.type !== 'Identifier') return;
         let inverted = false;
 
-        if (node.property.name === "notOk") {
+        if (node.property.name === 'notOk') {
           inverted = true;
-        } else if (node.property.name !== "ok") {
+        } else if (node.property.name !== 'ok') {
           return;
         }
 
         if (!node.parent) return;
-        if (node.parent.type !== "CallExpression") return;
+        if (node.parent.type !== 'CallExpression') return;
         let firstArg = node.parent.arguments[0];
         if (!firstArg) return;
-        if (firstArg.type !== "CallExpression") return;
-        if (firstArg.callee.type !== "Identifier") return;
-        if (firstArg.callee.name !== "find") return;
+        if (firstArg.type !== 'CallExpression') return;
+        if (firstArg.callee.type !== 'Identifier') return;
+        if (firstArg.callee.name !== 'find') return;
         if (firstArg.arguments.length !== 1) return;
 
         context.report({
@@ -38,10 +38,8 @@ module.exports = {
           fix(fixer) {
             let findArgText = sourceCode.getText(firstArg.arguments[0]);
             let messageArg = node.parent.arguments[1];
-            let messageArgText = messageArg
-              ? sourceCode.getText(messageArg)
-              : "";
-            let assertion = inverted ? "doesNotExist" : "exists";
+            let messageArgText = messageArg ? sourceCode.getText(messageArg) : '';
+            let assertion = inverted ? 'doesNotExist' : 'exists';
 
             return fixer.replaceText(
               node.parent,

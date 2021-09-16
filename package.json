@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "main": "index.js",
+  "repository": "https://github.com/simplabs/eslint-plugin-qunit-dom/",
   "scripts": {
     "lint": "eslint .",
+    "release": "release-it",
     "test": "jest",
     "update-readme": "node ./scripts/update-readme.js"
   },
@@ -19,12 +21,17 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.0.0",
     "jest": "27.2.0",
-    "prettier": "2.4.1"
+    "prettier": "2.4.1",
+    "release-it": "14.11.5",
+    "release-it-lerna-changelog": "3.1.0"
   },
   "peerDependencies": {
     "eslint": "^7.11.0"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16.*"
+  },
+  "changelog": {
+    "repo": "simplabs/eslint-plugin-qunit-dom"
   }
 }

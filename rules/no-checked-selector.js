@@ -1,8 +1,4 @@
-const message = "use assert.dom('.foo').isChecked() instead assert.dom('.foo:checked').exists()";
-
 module.exports = {
-  message,
-
   meta: {
     type: 'suggestion',
     docs: {
@@ -11,6 +7,9 @@ module.exports = {
       url: 'https://github.com/simplabs/eslint-plugin-qunit-dom/blob/main/rules/no-checked-selector.md',
     },
     schema: [],
+    messages: {
+      default: "use assert.dom('.foo').isChecked() instead of assert.dom('.foo:checked').exists()",
+    },
   },
 
   create(context) {
@@ -43,7 +42,7 @@ module.exports = {
 
         context.report({
           node: node,
-          message,
+          messageId: 'default',
         });
       },
     };

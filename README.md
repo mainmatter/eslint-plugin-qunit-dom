@@ -52,10 +52,14 @@ Each rule has emojis denoting:
 - 🔧 if some problems reported by the rule are automatically fixable by the `--fix` [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) option
 - 💡 if some problems reported by the rule are manually fixable by editor [suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions)
 
+<!--RULES_TABLE_START-->
+
 | Name    | Description | ✅ | 🔧 | 💡 |
 |:--------|:------------|:---------------|:-----------|:---------------|
 | [no-checked-selector](./rules/no-checked-selector.md) | disallow use of `assert.dom('.foo:checked').exists()` | ✅ |  |  |
 | [no-ok-find](./rules/no-ok-find.md) | disallow use of `assert.ok(find(...))` | ✅ | 🔧 |  |
+
+<!--RULES_TABLE_END-->
 
 
 License

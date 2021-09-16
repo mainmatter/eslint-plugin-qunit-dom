@@ -34,7 +34,7 @@ ruleTester.run('no-ok-find', rule, {
       output: "assert.dom('.foo').exists('bar')",
       errors: [
         {
-          message: rule.message,
+          messageId: 'default',
           column: 1,
           endColumn: 31,
         },
@@ -45,7 +45,7 @@ ruleTester.run('no-ok-find', rule, {
       output: "assert.dom('.foo').exists()",
       errors: [
         {
-          message: rule.message,
+          messageId: 'default',
           column: 1,
           endColumn: 24,
         },
@@ -57,7 +57,7 @@ ruleTester.run('no-ok-find', rule, {
       output: "assert.dom('.foo').doesNotExist('bar')",
       errors: [
         {
-          message: rule.message,
+          messageId: 'default',
           column: 1,
           endColumn: 34,
         },
@@ -68,7 +68,7 @@ ruleTester.run('no-ok-find', rule, {
       output: "assert.dom('.foo').doesNotExist()",
       errors: [
         {
-          message: rule.message,
+          messageId: 'default',
           column: 1,
           endColumn: 27,
         },

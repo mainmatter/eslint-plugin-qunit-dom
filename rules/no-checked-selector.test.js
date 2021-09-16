@@ -29,7 +29,7 @@ ruleTester.run('no-checked-selector', rule, {
       code: "assert.dom('.foo:checked').exists()",
       errors: [
         {
-          message: rule.message,
+          messageId: 'default',
           column: 1,
           endColumn: 27,
         },

@@ -1,8 +1,4 @@
-const message = 'use assert.dom(...).exists() instead assert.ok(find(...))';
-
 module.exports = {
-  message,
-
   meta: {
     type: 'suggestion',
     docs: {
@@ -12,6 +8,9 @@ module.exports = {
     },
     fixable: 'code',
     schema: [],
+    messages: {
+      default: 'use assert.dom(...).exists() instead assert.ok(find(...))',
+    },
   },
 
   create(context) {
@@ -41,7 +40,7 @@ module.exports = {
 
         context.report({
           node: node.parent,
-          message,
+          messageId: 'default',
           fix(fixer) {
             let findArgText = sourceCode.getText(firstArg.arguments[0]);
             let messageArg = node.parent.arguments[1];

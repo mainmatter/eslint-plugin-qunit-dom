@@ -5,8 +5,6 @@ on:
     branches:
       - main
       - "v*"
-    tags:
-      - "v*"
   pull_request:
 
 env:
@@ -60,20 +58,3 @@ jobs:
       - run: yarn install
       - run: yarn add --dev eslint@${{ matrix.eslint-version }}
       - run: yarn test
-
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 12.x
-          registry-url: 'https://registry.npmjs.org'
-
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

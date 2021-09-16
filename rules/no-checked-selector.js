@@ -5,8 +5,6 @@ module.exports = {
   message,
 
   create(context) {
-    let sourceCode = context.getSourceCode();
-
     return {
       CallExpression(node) {
         if (node.callee.type !== "MemberExpression") return;

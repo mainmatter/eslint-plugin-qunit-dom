@@ -9,6 +9,8 @@ on:
 
 env:
   FORCE_COLOR: 1
+  # Using pnpm v5 for now because of Node.js 10 support
+  PNPM_VERSION: 5.18.9
 
 jobs:
 #  lint:
@@ -38,8 +40,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: yarn install
-      - run: yarn test --coverage
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: true
+
+      - run: pnpm test -- --coverage
 
   test-eslint:
     strategy:
@@ -55,6 +61,10 @@ jobs:
         with:
           node-version: 14.x
 
-      - run: yarn install
-      - run: yarn add --dev eslint@${{ matrix.eslint-version }}
-      - run: yarn test
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: true
+
+      - run: pnpm add --save-dev eslint@${{ matrix.eslint-version }}
+      - run: pnpm test

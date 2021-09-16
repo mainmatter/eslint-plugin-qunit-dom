@@ -9,8 +9,7 @@ on:
 
 env:
   FORCE_COLOR: 1
-  # Using pnpm v5 for now because of Node.js 10 support
-  PNPM_VERSION: 5.18.9
+  PNPM_VERSION: 6.15.0
 
 jobs:
 #  lint:

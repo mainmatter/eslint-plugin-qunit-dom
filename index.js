@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 module.exports = {
   rules: {
-    "no-ok-find": require("./rules/no-ok-find"),
+    'no-ok-find': require('./rules/no-ok-find'),
   },
 };

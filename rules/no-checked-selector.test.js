@@ -1,18 +1,18 @@
-const { RuleTester } = require("eslint");
+const { RuleTester } = require('eslint');
 
-const rule = require("./no-checked-selector");
+const rule = require('./no-checked-selector');
 
 let ruleTester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
   },
 });
 
-ruleTester.run("no-checked-selector", rule, {
+ruleTester.run('no-checked-selector', rule, {
   valid: [
-    "assert()",
-    "assert.foo",
+    'assert()',
+    'assert.foo',
     "assert.foo('.foo:checked')",
     "notAssert.dom('.foo:checked')",
     "assert.dom('.foo:checked').somethingElse()",
@@ -20,9 +20,9 @@ ruleTester.run("no-checked-selector", rule, {
     "assert.dom(':checkedfoo').exists()",
     "assert.dom(':checked').exists()",
     "assert.dom('.foo:checked', '.bar').exists()",
-    "assert.dom().exists()",
-    "assert.dom(node).exists()",
-    "assert.dom(42).exists()",
+    'assert.dom().exists()',
+    'assert.dom(node).exists()',
+    'assert.dom(42).exists()',
   ],
   invalid: [
     {

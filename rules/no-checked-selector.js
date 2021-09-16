@@ -3,6 +3,16 @@ const message = "use assert.dom('.foo').isChecked() instead assert.dom('.foo:che
 module.exports = {
   message,
 
+  meta: {
+    type: 'suggestion',
+    docs: {
+      description: "disallow use of `assert.dom('.foo:checked').exists()`",
+      recommended: true,
+      url: 'https://github.com/simplabs/eslint-plugin-qunit-dom/blob/main/rules/no-checked-selector.md',
+    },
+    schema: [],
+  },
+
   create(context) {
     return {
       CallExpression(node) {

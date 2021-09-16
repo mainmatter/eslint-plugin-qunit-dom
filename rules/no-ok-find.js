@@ -4,7 +4,14 @@ module.exports = {
   message,
 
   meta: {
+    type: 'suggestion',
+    docs: {
+      description: 'disallow use of `assert.ok(find(...))`',
+      recommended: true,
+      url: 'https://github.com/simplabs/eslint-plugin-qunit-dom/blob/main/rules/no-ok-find.md',
+    },
     fixable: 'code',
+    schema: [],
   },
 
   create(context) {

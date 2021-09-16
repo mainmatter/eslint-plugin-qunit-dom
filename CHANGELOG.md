@@ -1,5 +1,14 @@
 # Changelog
 
+
+## v0.1.1 (2021-09-16)
+
+#### :rocket: Enhancement
+* [#27](https://github.com/simplabs/eslint-plugin-qunit-dom/pull/27) Add `.npmignore` file ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
 ## v0.1.0 (2021-09-16)
 
 #### :boom: Breaking Change

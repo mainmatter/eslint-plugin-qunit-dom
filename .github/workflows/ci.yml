@@ -9,8 +9,7 @@ on:
 
 env:
   FORCE_COLOR: 1
-  # Using pnpm v5 for now because of Node.js 10 support
-  PNPM_VERSION: 5.18.9
+  PNPM_VERSION: 6.15.0
 
 jobs:
 #  lint:
@@ -36,15 +35,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: ${{ env.PNPM_VERSION }}
-          run_install: true
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - run: pnpm install
       - run: pnpm test -- --coverage
 
   test-eslint:
@@ -57,14 +58,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
 
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: ${{ env.PNPM_VERSION }}
-          run_install: true
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          # cache disabled because the extra `pnpm add` might conflict with the
+          # `test-node` job cache, and there is currently no way to influence
+          # the cache key
+          # cache: 'pnpm'
+
+      - run: pnpm install
       - run: pnpm add --save-dev eslint@${{ matrix.eslint-version }}
       - run: pnpm test

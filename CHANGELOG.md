@@ -1,6 +1,15 @@
 # Changelog
 
 
+
+## v0.2.0 (2021-09-16)
+
+#### :rocket: Enhancement
+* [#28](https://github.com/simplabs/eslint-plugin-qunit-dom/pull/28) Reimplement `no-ok-find` rule ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
 ## v0.1.1 (2021-09-16)
 
 #### :rocket: Enhancement

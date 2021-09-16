@@ -13,5 +13,8 @@
   },
   "peerDependencies": {
     "eslint": "^7.11.0"
+  },
+  "engines": {
+    "node": "12.* || 14.* || >= 16.*"
   }
 }

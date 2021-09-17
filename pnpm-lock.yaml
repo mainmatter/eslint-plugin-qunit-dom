@@ -7,7 +7,7 @@ specifiers:
   eslint-plugin-eslint-plugin: 3.5.3
   eslint-plugin-filenames: 1.3.2
   eslint-plugin-import: 2.24.2
-  eslint-plugin-jest: 24.4.0
+  eslint-plugin-jest: 24.4.2
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.0.0
   jest: 27.2.0
@@ -22,7 +22,7 @@ devDependencies:
   eslint-plugin-eslint-plugin: 3.5.3_eslint@7.32.0
   eslint-plugin-filenames: 1.3.2_eslint@7.32.0
   eslint-plugin-import: 2.24.2_eslint@7.32.0
-  eslint-plugin-jest: 24.4.0_eslint@7.32.0
+  eslint-plugin-jest: 24.4.2_eslint@7.32.0
   eslint-plugin-node: 11.1.0_eslint@7.32.0
   eslint-plugin-prettier: 4.0.0_6e975bd57c7acf028c1a9ddbbf60c898
   jest: 27.2.0
@@ -2049,8 +2049,8 @@ packages:
       tsconfig-paths: 3.11.0
     dev: true
 
-  /eslint-plugin-jest/24.4.0_eslint@7.32.0:
-    resolution: {integrity: sha512-8qnt/hgtZ94E9dA6viqfViKBfkJwFHXgJmTWlMGDgunw1XJEGqm3eiPjDsTanM3/u/3Az82nyQM9GX7PM/QGmg==}
+  /eslint-plugin-jest/24.4.2_eslint@7.32.0:
+    resolution: {integrity: sha512-jNMnqwX75z0RXRMXkxwb/+9ylKJYJLJ8nT8nBT0XFM5qx4IQGxP4edMawa0qGkSbHae0BDPBmi8I2QF0/F04XQ==}
     engines: {node: '>=10'}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': '>= 4'

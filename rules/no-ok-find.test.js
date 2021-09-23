@@ -49,15 +49,15 @@ ruleTester.run('no-ok-find', rule, {
     "assert.strictEqual(find('.foo')[0], true);",
     "assert.strictEqual(find('.foo'), true, 'custom message');",
     "assert.strictEqual(find('.foo')[0], true, 'custom message');",
-    "assert.strictEqual(find('.foo', '.parent-scope'), true);",
-    "assert.strictEqual(find('.foo', '.parent-scope')[0], true);",
+    "assert.strictEqual(find('.foo', root), true);",
+    "assert.strictEqual(find('.foo', root)[0], true);",
 
     "assert.strictEqual(find('.foo'), false);",
     "assert.strictEqual(find('.foo')[0], false);",
     "assert.strictEqual(find('.foo'), false, 'custom message');",
     "assert.strictEqual(find('.foo')[0], false, 'custom message');",
-    "assert.strictEqual(find('.foo', '.parent-scope'), false);",
-    "assert.strictEqual(find('.foo', '.parent-scope')[0], false);",
+    "assert.strictEqual(find('.foo', root), false);",
+    "assert.strictEqual(find('.foo', root)[0], false);",
   ],
 
   invalid: [
@@ -96,13 +96,13 @@ ruleTester.run('no-ok-find', rule, {
     },
 
     {
-      code: "assert.ok(find('.foo', '.parent-scope'));",
-      output: "assert.dom('.foo', '.parent-scope').exists();",
+      code: "assert.ok(find('.foo', root));",
+      output: "assert.dom('.foo', root).exists();",
       errors: [{ messageId: 'default' }],
     },
     {
-      code: "assert.ok(find('.foo', '.parent-scope')[0]);",
-      output: "assert.dom('.foo', '.parent-scope').exists();",
+      code: "assert.ok(find('.foo', root)[0]);",
+      output: "assert.dom('.foo', root).exists();",
       errors: [{ messageId: 'default' }],
     },
 
@@ -129,13 +129,13 @@ ruleTester.run('no-ok-find', rule, {
     },
 
     {
-      code: "assert.equal(find('.foo', '.parent-scope'), true);",
-      output: "assert.dom('.foo', '.parent-scope').exists();",
+      code: "assert.equal(find('.foo', root), true);",
+      output: "assert.dom('.foo', root).exists();",
       errors: [{ messageId: 'default' }],
     },
     {
-      code: "assert.equal(find('.foo', '.parent-scope')[0], true);",
-      output: "assert.dom('.foo', '.parent-scope').exists();",
+      code: "assert.equal(find('.foo', root)[0], true);",
+      output: "assert.dom('.foo', root).exists();",
       errors: [{ messageId: 'default' }],
     },
 
@@ -174,13 +174,13 @@ ruleTester.run('no-ok-find', rule, {
     },
 
     {
-      code: "assert.notOk(find('.foo', '.parent-scope'));",
-      output: "assert.dom('.foo', '.parent-scope').doesNotExist();",
+      code: "assert.notOk(find('.foo', root));",
+      output: "assert.dom('.foo', root).doesNotExist();",
       errors: [{ messageId: 'inverted' }],
     },
     {
-      code: "assert.notOk(find('.foo', '.parent-scope')[0]);",
-      output: "assert.dom('.foo', '.parent-scope').doesNotExist();",
+      code: "assert.notOk(find('.foo', root)[0]);",
+      output: "assert.dom('.foo', root).doesNotExist();",
       errors: [{ messageId: 'inverted' }],
     },
 
@@ -207,13 +207,13 @@ ruleTester.run('no-ok-find', rule, {
     },
 
     {
-      code: "assert.equal(find('.foo', '.parent-scope'), false);",
-      output: "assert.dom('.foo', '.parent-scope').doesNotExist();",
+      code: "assert.equal(find('.foo', root), false);",
+      output: "assert.dom('.foo', root).doesNotExist();",
       errors: [{ messageId: 'inverted' }],
     },
     {
-      code: "assert.equal(find('.foo', '.parent-scope')[0], false);",
-      output: "assert.dom('.foo', '.parent-scope').doesNotExist();",
+      code: "assert.equal(find('.foo', root)[0], false);",
+      output: "assert.dom('.foo', root).doesNotExist();",
       errors: [{ messageId: 'inverted' }],
     },
   ],

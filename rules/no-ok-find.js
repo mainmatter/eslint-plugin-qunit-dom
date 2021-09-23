@@ -79,7 +79,7 @@ module.exports = {
           fix(fixer) {
             let domArgs = sourceCode.getText(firstFindArg);
             let scopeArg = findNode.arguments[1];
-            if (scopeArg && scopeArg.type === 'Literal' && typeof scopeArg.value === 'string') {
+            if (scopeArg) {
               domArgs += ', ';
               domArgs += sourceCode.getText(scopeArg);
             }
@@ -117,7 +117,7 @@ module.exports = {
           fix(fixer) {
             let domArgs = sourceCode.getText(firstFindArg);
             let scopeArg = findNode.arguments[1];
-            if (scopeArg && scopeArg.type === 'Literal' && typeof scopeArg.value === 'string') {
+            if (scopeArg) {
               domArgs += ', ';
               domArgs += sourceCode.getText(scopeArg);
             }

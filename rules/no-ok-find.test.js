@@ -65,77 +65,77 @@ ruleTester.run('no-ok-find', rule, {
     {
       code: "assert.ok(find('.foo'));",
       output: "assert.dom('.foo').exists();",
-      errors: [{ messageId: 'ok' }],
+      errors: [{ messageId: 'default' }],
     },
     {
       code: "assert.ok(find('.foo')[0]);",
       output: "assert.dom('.foo').exists();",
-      errors: [{ messageId: 'ok' }],
+      errors: [{ messageId: 'default' }],
     },
     {
       code: 'assert.ok(find(foo));',
       output: 'assert.dom(foo).exists();',
-      errors: [{ messageId: 'ok' }],
+      errors: [{ messageId: 'default' }],
     },
     {
       code: 'assert.ok(find(foo.bar));',
       output: 'assert.dom(foo.bar).exists();',
-      errors: [{ messageId: 'ok' }],
+      errors: [{ messageId: 'default' }],
     },
 
     {
       code: "assert.ok(find('.foo'), 'custom message');",
       output: "assert.dom('.foo').exists('custom message');",
-      errors: [{ messageId: 'ok' }],
+      errors: [{ messageId: 'default' }],
     },
     {
       code: "assert.ok(find('.foo')[0], 'custom message');",
       output: "assert.dom('.foo').exists('custom message');",
-      errors: [{ messageId: 'ok' }],
+      errors: [{ messageId: 'default' }],
     },
 
     {
       code: "assert.ok(find('.foo', '.parent-scope'));",
       output: "assert.dom('.foo', '.parent-scope').exists();",
-      errors: [{ messageId: 'ok' }],
+      errors: [{ messageId: 'default' }],
     },
     {
       code: "assert.ok(find('.foo', '.parent-scope')[0]);",
       output: "assert.dom('.foo', '.parent-scope').exists();",
-      errors: [{ messageId: 'ok' }],
+      errors: [{ messageId: 'default' }],
     },
 
     {
       code: "assert.equal(find('.foo'), true);",
       output: "assert.dom('.foo').exists();",
-      errors: [{ messageId: 'equal-true' }],
+      errors: [{ messageId: 'default' }],
     },
     {
       code: "assert.equal(find('.foo')[0], true);",
       output: "assert.dom('.foo').exists();",
-      errors: [{ messageId: 'equal-true' }],
+      errors: [{ messageId: 'default' }],
     },
 
     {
       code: "assert.equal(find('.foo'), true, 'custom message');",
       output: "assert.dom('.foo').exists('custom message');",
-      errors: [{ messageId: 'equal-true' }],
+      errors: [{ messageId: 'default' }],
     },
     {
       code: "assert.equal(find('.foo')[0], true, 'custom message');",
       output: "assert.dom('.foo').exists('custom message');",
-      errors: [{ messageId: 'equal-true' }],
+      errors: [{ messageId: 'default' }],
     },
 
     {
       code: "assert.equal(find('.foo', '.parent-scope'), true);",
       output: "assert.dom('.foo', '.parent-scope').exists();",
-      errors: [{ messageId: 'equal-true' }],
+      errors: [{ messageId: 'default' }],
     },
     {
       code: "assert.equal(find('.foo', '.parent-scope')[0], true);",
       output: "assert.dom('.foo', '.parent-scope').exists();",
-      errors: [{ messageId: 'equal-true' }],
+      errors: [{ messageId: 'default' }],
     },
 
     // from https://github.com/simplabs/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/not-ok-find.input.js
@@ -143,77 +143,77 @@ ruleTester.run('no-ok-find', rule, {
     {
       code: "assert.notOk(find('.foo'));",
       output: "assert.dom('.foo').doesNotExist();",
-      errors: [{ messageId: 'not-ok' }],
+      errors: [{ messageId: 'inverted' }],
     },
     {
       code: "assert.notOk(find('.foo')[0]);",
       output: "assert.dom('.foo').doesNotExist();",
-      errors: [{ messageId: 'not-ok' }],
+      errors: [{ messageId: 'inverted' }],
     },
     {
       code: 'assert.notOk(find(foo));',
       output: 'assert.dom(foo).doesNotExist();',
-      errors: [{ messageId: 'not-ok' }],
+      errors: [{ messageId: 'inverted' }],
     },
     {
       code: 'assert.notOk(find(foo.bar));',
       output: 'assert.dom(foo.bar).doesNotExist();',
-      errors: [{ messageId: 'not-ok' }],
+      errors: [{ messageId: 'inverted' }],
     },
 
     {
       code: "assert.notOk(find('.foo'), 'custom message');",
       output: "assert.dom('.foo').doesNotExist('custom message');",
-      errors: [{ messageId: 'not-ok' }],
+      errors: [{ messageId: 'inverted' }],
     },
     {
       code: "assert.notOk(find('.foo')[0], 'custom message');",
       output: "assert.dom('.foo').doesNotExist('custom message');",
-      errors: [{ messageId: 'not-ok' }],
+      errors: [{ messageId: 'inverted' }],
     },
 
     {
       code: "assert.notOk(find('.foo', '.parent-scope'));",
       output: "assert.dom('.foo', '.parent-scope').doesNotExist();",
-      errors: [{ messageId: 'not-ok' }],
+      errors: [{ messageId: 'inverted' }],
     },
     {
       code: "assert.notOk(find('.foo', '.parent-scope')[0]);",
       output: "assert.dom('.foo', '.parent-scope').doesNotExist();",
-      errors: [{ messageId: 'not-ok' }],
+      errors: [{ messageId: 'inverted' }],
     },
 
     {
       code: "assert.equal(find('.foo'), false);",
       output: "assert.dom('.foo').doesNotExist();",
-      errors: [{ messageId: 'equal-false' }],
+      errors: [{ messageId: 'inverted' }],
     },
     {
       code: "assert.equal(find('.foo')[0], false);",
       output: "assert.dom('.foo').doesNotExist();",
-      errors: [{ messageId: 'equal-false' }],
+      errors: [{ messageId: 'inverted' }],
     },
 
     {
       code: "assert.equal(find('.foo'), false, 'custom message');",
       output: "assert.dom('.foo').doesNotExist('custom message');",
-      errors: [{ messageId: 'equal-false' }],
+      errors: [{ messageId: 'inverted' }],
     },
     {
       code: "assert.equal(find('.foo')[0], false, 'custom message');",
       output: "assert.dom('.foo').doesNotExist('custom message');",
-      errors: [{ messageId: 'equal-false' }],
+      errors: [{ messageId: 'inverted' }],
     },
 
     {
       code: "assert.equal(find('.foo', '.parent-scope'), false);",
       output: "assert.dom('.foo', '.parent-scope').doesNotExist();",
-      errors: [{ messageId: 'equal-false' }],
+      errors: [{ messageId: 'inverted' }],
     },
     {
       code: "assert.equal(find('.foo', '.parent-scope')[0], false);",
       output: "assert.dom('.foo', '.parent-scope').doesNotExist();",
-      errors: [{ messageId: 'equal-false' }],
+      errors: [{ messageId: 'inverted' }],
     },
   ],
 });

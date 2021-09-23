@@ -53,10 +53,8 @@ module.exports = {
     fixable: 'code',
     schema: [],
     messages: {
-      ok: 'use assert.dom(...).exists() instead assert.ok(find(...))',
-      'not-ok': 'use assert.dom(...).doesNotExists() instead assert.notOk(find(...))',
-      'equal-true': 'use assert.dom(...).exists() instead assert.equal(find(...), true)',
-      'equal-false': 'use assert.dom(...).doesNotExists() instead assert.equal(find(...), false)',
+      default: 'use assert.dom(...).exists()',
+      inverted: 'use assert.dom(...).doesNotExists()',
     },
   },
 
@@ -76,7 +74,7 @@ module.exports = {
 
         context.report({
           node: node,
-          messageId: inverted ? 'not-ok' : 'ok',
+          messageId: inverted ? 'inverted' : 'default',
 
           fix(fixer) {
             let domArgs = sourceCode.getText(firstFindArg);
@@ -114,7 +112,7 @@ module.exports = {
 
         context.report({
           node: node,
-          messageId: inverted ? 'equal-false' : 'equal-true',
+          messageId: inverted ? 'inverted' : 'default',
 
           fix(fixer) {
             let domArgs = sourceCode.getText(firstFindArg);

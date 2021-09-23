@@ -75,6 +75,21 @@ module.exports = {
   create(context) {
     let sourceCode = context.getSourceCode();
 
+    function fix(fixer, node, { inverted, findNode, messageNode }) {
+      let domArgs = sourceCode.getText(findNode.arguments[0]);
+      let scopeArg = findNode.arguments[1];
+      if (scopeArg) {
+        domArgs += ', ';
+        domArgs += sourceCode.getText(scopeArg);
+      }
+
+      let assertion = inverted ? 'doesNotExist' : 'exists';
+
+      let messageArgText = messageNode ? sourceCode.getText(messageNode) : '';
+
+      return fixer.replaceText(node, `assert.dom(${domArgs}).${assertion}(${messageArgText})`);
+    }
+
     return {
       [OK_OR_NOTOK_SELECTOR](node) {
         let inverted = node.callee.property.name === 'notOk';
@@ -91,22 +106,8 @@ module.exports = {
           messageId: inverted ? 'inverted' : 'default',
 
           fix(fixer) {
-            let domArgs = sourceCode.getText(firstFindArg);
-            let scopeArg = findNode.arguments[1];
-            if (scopeArg) {
-              domArgs += ', ';
-              domArgs += sourceCode.getText(scopeArg);
-            }
-
-            let assertion = inverted ? 'doesNotExist' : 'exists';
-
-            let messageArg = node.arguments[1];
-            let messageArgText = messageArg ? sourceCode.getText(messageArg) : '';
-
-            return fixer.replaceText(
-              node,
-              `assert.dom(${domArgs}).${assertion}(${messageArgText})`
-            );
+            let messageNode = node.arguments[1];
+            return fix(fixer, node, { inverted, findNode, messageNode });
           },
         });
       },
@@ -129,22 +130,8 @@ module.exports = {
           messageId: inverted ? 'inverted' : 'default',
 
           fix(fixer) {
-            let domArgs = sourceCode.getText(firstFindArg);
-            let scopeArg = findNode.arguments[1];
-            if (scopeArg) {
-              domArgs += ', ';
-              domArgs += sourceCode.getText(scopeArg);
-            }
-
-            let assertion = inverted ? 'doesNotExist' : 'exists';
-
-            let messageArg = node.arguments[2];
-            let messageArgText = messageArg ? sourceCode.getText(messageArg) : '';
-
-            return fixer.replaceText(
-              node,
-              `assert.dom(${domArgs}).${assertion}(${messageArgText})`
-            );
+            let messageNode = node.arguments[2];
+            return fix(fixer, node, { inverted, findNode, messageNode });
           },
         });
       },
@@ -162,22 +149,8 @@ module.exports = {
           messageId: inverted ? 'inverted' : 'default',
 
           fix(fixer) {
-            let domArgs = sourceCode.getText(firstFindArg);
-            let scopeArg = findNode.arguments[1];
-            if (scopeArg) {
-              domArgs += ', ';
-              domArgs += sourceCode.getText(scopeArg);
-            }
-
-            let assertion = inverted ? 'doesNotExist' : 'exists';
-
-            let messageArg = node.arguments[2];
-            let messageArgText = messageArg ? sourceCode.getText(messageArg) : '';
-
-            return fixer.replaceText(
-              node,
-              `assert.dom(${domArgs}).${assertion}(${messageArgText})`
-            );
+            let messageNode = node.arguments[2];
+            return fix(fixer, node, { inverted, findNode, messageNode });
           },
         });
       },

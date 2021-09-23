@@ -13,6 +13,20 @@ const EQUAL_SELECTOR =
   '[arguments.length>=2]' +
   '[arguments.1.type="Literal"]';
 
+const EQUAL_LENGTH_SELECTOR =
+  'CallExpression' +
+  '[callee.type="MemberExpression"]' +
+  '[callee.object.name="assert"]' +
+  '[callee.property.name=/^(equal|strictEqual)$/]' +
+  '[arguments.length>=2]' +
+  '[arguments.0.type="MemberExpression"]' +
+  '[arguments.0.object.type="CallExpression"]' +
+  '[arguments.0.object.callee.type="Identifier"]' +
+  '[arguments.0.object.callee.name="find"]' +
+  '[arguments.0.property.type="Identifier"]' +
+  '[arguments.0.property.name="length"]' +
+  '[arguments.1.type="Literal"]';
+
 // see https://api.jquery.com/category/selectors/jquery-selector-extensions/
 const JQUERY_SELECTOR_EXTENSIONS = [
   ':animated',
@@ -61,6 +75,21 @@ module.exports = {
   create(context) {
     let sourceCode = context.getSourceCode();
 
+    function fix(fixer, node, { inverted, findNode, messageNode }) {
+      let domArgs = sourceCode.getText(findNode.arguments[0]);
+      let scopeArg = findNode.arguments[1];
+      if (scopeArg) {
+        domArgs += ', ';
+        domArgs += sourceCode.getText(scopeArg);
+      }
+
+      let assertion = inverted ? 'doesNotExist' : 'exists';
+
+      let messageArgText = messageNode ? sourceCode.getText(messageNode) : '';
+
+      return fixer.replaceText(node, `assert.dom(${domArgs}).${assertion}(${messageArgText})`);
+    }
+
     return {
       [OK_OR_NOTOK_SELECTOR](node) {
         let inverted = node.callee.property.name === 'notOk';
@@ -77,22 +106,8 @@ module.exports = {
           messageId: inverted ? 'inverted' : 'default',
 
           fix(fixer) {
-            let domArgs = sourceCode.getText(firstFindArg);
-            let scopeArg = findNode.arguments[1];
-            if (scopeArg) {
-              domArgs += ', ';
-              domArgs += sourceCode.getText(scopeArg);
-            }
-
-            let assertion = inverted ? 'doesNotExist' : 'exists';
-
-            let messageArg = node.arguments[1];
-            let messageArgText = messageArg ? sourceCode.getText(messageArg) : '';
-
-            return fixer.replaceText(
-              node,
-              `assert.dom(${domArgs}).${assertion}(${messageArgText})`
-            );
+            let messageNode = node.arguments[1];
+            return fix(fixer, node, { inverted, findNode, messageNode });
           },
         });
       },
@@ -115,22 +130,27 @@ module.exports = {
           messageId: inverted ? 'inverted' : 'default',
 
           fix(fixer) {
-            let domArgs = sourceCode.getText(firstFindArg);
-            let scopeArg = findNode.arguments[1];
-            if (scopeArg) {
-              domArgs += ', ';
-              domArgs += sourceCode.getText(scopeArg);
-            }
+            let messageNode = node.arguments[2];
+            return fix(fixer, node, { inverted, findNode, messageNode });
+          },
+        });
+      },
 
-            let assertion = inverted ? 'doesNotExist' : 'exists';
+      [EQUAL_LENGTH_SELECTOR](node) {
+        let secondArg = node.arguments[1];
+        let inverted = secondArg.value === 0;
 
-            let messageArg = node.arguments[2];
-            let messageArgText = messageArg ? sourceCode.getText(messageArg) : '';
+        let findNode = node.arguments[0].object;
+        let firstFindArg = findNode.arguments[0];
+        if (!isValidFindArg(firstFindArg)) return;
 
-            return fixer.replaceText(
-              node,
-              `assert.dom(${domArgs}).${assertion}(${messageArgText})`
-            );
+        context.report({
+          node: node,
+          messageId: inverted ? 'inverted' : 'default',
+
+          fix(fixer) {
+            let messageNode = node.arguments[2];
+            return fix(fixer, node, { inverted, findNode, messageNode });
           },
         });
       },

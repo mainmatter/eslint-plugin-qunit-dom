@@ -58,6 +58,8 @@ ruleTester.run('no-ok-find', rule, {
     "assert.strictEqual(find('.foo')[0], false, 'custom message');",
     "assert.strictEqual(find('.foo', root), false);",
     "assert.strictEqual(find('.foo', root)[0], false);",
+
+    'assert.equal(find(42).length, 0);',
   ],
 
   invalid: [
@@ -214,6 +216,28 @@ ruleTester.run('no-ok-find', rule, {
     {
       code: "assert.equal(find('.foo', root)[0], false);",
       output: "assert.dom('.foo', root).doesNotExist();",
+      errors: [{ messageId: 'inverted' }],
+    },
+
+    {
+      code: "assert.equal(find('.foo', root).length, 1, 'foo exists');",
+      output: "assert.dom('.foo', root).exists('foo exists');",
+      errors: [{ messageId: 'default' }],
+    },
+    {
+      code: "assert.equal(find('.foo', root).length, 0, 'foo does not exist');",
+      output: "assert.dom('.foo', root).doesNotExist('foo does not exist');",
+      errors: [{ messageId: 'inverted' }],
+    },
+
+    {
+      code: "assert.strictEqual(find('.foo', root).length, 1, 'foo exists');",
+      output: "assert.dom('.foo', root).exists('foo exists');",
+      errors: [{ messageId: 'default' }],
+    },
+    {
+      code: "assert.strictEqual(find('.foo', root).length, 0, 'foo does not exist');",
+      output: "assert.dom('.foo', root).doesNotExist('foo does not exist');",
       errors: [{ messageId: 'inverted' }],
     },
   ],

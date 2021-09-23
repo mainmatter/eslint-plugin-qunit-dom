@@ -18,6 +18,7 @@ ruleTester.run('no-ok-find', rule, {
     'assert.ok(1);',
     "assert.ok(notFind('.foo'));",
     'assert.ok(find());',
+    "assert.token(find('.foo'));",
 
     "notAssert.notOk(find('.foo'));",
     'assert.notOk;',

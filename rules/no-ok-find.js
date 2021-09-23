@@ -2,7 +2,7 @@ const OK_OR_NOTOK_SELECTOR =
   'CallExpression' +
   '[callee.type="MemberExpression"]' +
   '[callee.object.name="assert"]' +
-  '[callee.property.name=/(ok|notOk)/]' +
+  '[callee.property.name=/^(ok|notOk)$/]' +
   '[arguments.length>=1]';
 
 const EQUAL_SELECTOR =

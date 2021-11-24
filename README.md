@@ -56,7 +56,7 @@ Each rule has emojis denoting:
 
 | Name    | Description | ✅ | 🔧 | 💡 |
 |:--------|:------------|:---------------|:-----------|:---------------|
-| [no-checked-selector](./rules/no-checked-selector.md) | disallow use of `assert.dom('.foo:checked').exists()` | ✅ |  |  |
+| [no-checked-selector](./rules/no-checked-selector.md) | disallow use of `assert.dom('.foo:checked').exists()` | ✅ | 🔧 |  |
 | [no-ok-find](./rules/no-ok-find.md) | disallow use of `assert.ok(find(...))` | ✅ | 🔧 |  |
 
 <!--RULES_TABLE_END-->

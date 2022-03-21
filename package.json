@@ -22,7 +22,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "jest": "27.5.1",
     "prettier": "2.6.0",
-    "release-it": "14.13.0",
+    "release-it": "14.13.1",
     "release-it-lerna-changelog": "4.0.1"
   },
   "peerDependencies": {

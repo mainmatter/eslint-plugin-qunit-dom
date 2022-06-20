@@ -4,7 +4,7 @@ specifiers:
   eslint: 8.18.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-eslint-comments: 3.2.0
-  eslint-plugin-eslint-plugin: 4.2.0
+  eslint-plugin-eslint-plugin: 4.3.0
   eslint-plugin-filenames: 1.3.2
   eslint-plugin-import: 2.26.0
   eslint-plugin-jest: 26.5.3
@@ -19,7 +19,7 @@ devDependencies:
   eslint: 8.18.0
   eslint-config-prettier: 8.5.0_eslint@8.18.0
   eslint-plugin-eslint-comments: 3.2.0_eslint@8.18.0
-  eslint-plugin-eslint-plugin: 4.2.0_eslint@8.18.0
+  eslint-plugin-eslint-plugin: 4.3.0_eslint@8.18.0
   eslint-plugin-filenames: 1.3.2_eslint@8.18.0
   eslint-plugin-import: 2.26.0_eslint@8.18.0
   eslint-plugin-jest: 26.5.3_eslint@8.18.0+jest@28.1.1
@@ -1948,8 +1948,8 @@ packages:
       ignore: 5.2.0
     dev: true
 
-  /eslint-plugin-eslint-plugin/4.2.0_eslint@8.18.0:
-    resolution: {integrity: sha512-ZDyUUlZJw85hmc9pGciNFiQwojXKxV7KAAVnQtojk1W/I8YYHxYV9JBuzhfAYfVemiQzDPNwj1zwAqQwGN1ROw==}
+  /eslint-plugin-eslint-plugin/4.3.0_eslint@8.18.0:
+    resolution: {integrity: sha512-0xZ++ilIpGY+gBwsaW/uIhG/Rrl/sltPCai3UUPzWbaOPud2tel9UCWj8sLTADNmVqBD+vcqLHzHY86q/b71yg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'

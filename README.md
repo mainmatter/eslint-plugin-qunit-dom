@@ -3,7 +3,7 @@ eslint-plugin-qunit-dom
 
 An ESLint plugin for [qunit-dom] that automatically fixes the most common issues.
 
-[qunit-dom]: https://github.com/simplabs/qunit-dom
+[qunit-dom]: https://github.com/Mainmatter/qunit-dom
 
 
 Compatibility

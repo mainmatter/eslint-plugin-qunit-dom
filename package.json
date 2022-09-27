@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "license": "MIT",
   "main": "index.js",
-  "repository": "https://github.com/simplabs/eslint-plugin-qunit-dom/",
+  "repository": "https://github.com/Mainmatter/eslint-plugin-qunit-dom/",
   "scripts": {
     "lint": "eslint .",
     "release": "release-it",
@@ -32,6 +32,6 @@
     "node": "12.* || 14.* || >= 16.*"
   },
   "changelog": {
-    "repo": "simplabs/eslint-plugin-qunit-dom"
+    "repo": "Mainmatter/eslint-plugin-qunit-dom"
   }
 }

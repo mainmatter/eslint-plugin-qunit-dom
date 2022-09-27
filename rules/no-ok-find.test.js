@@ -27,7 +27,7 @@ ruleTester.run('no-ok-find', rule, {
     "assert.notOk(notFind('.foo'));",
     'assert.notOk(find());',
 
-    // from https://github.com/simplabs/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/ok-find.input.js
+    // from https://github.com/Mainmatter/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/ok-find.input.js
     "assert.ok(find('input:first'));",
     "assert.ok(find('input:contains(foo)'));",
     "assert.equal(find('.foo'));",
@@ -36,7 +36,7 @@ ruleTester.run('no-ok-find', rule, {
     'assert.equal(foo(), true);',
     'assert.strictEqual(foo(), true);',
 
-    // from https://github.com/simplabs/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/ok-find.input.js
+    // from https://github.com/Mainmatter/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/ok-find.input.js
     "assert.notOk(find('input:first'));",
     "assert.notOk(find('input:contains(foo)'));",
     'assert.notOk(true);',
@@ -63,7 +63,7 @@ ruleTester.run('no-ok-find', rule, {
   ],
 
   invalid: [
-    // from https://github.com/simplabs/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/ok-find.input.js
+    // from https://github.com/Mainmatter/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/ok-find.input.js
 
     {
       code: "assert.ok(find('.foo'));",
@@ -141,7 +141,7 @@ ruleTester.run('no-ok-find', rule, {
       errors: [{ messageId: 'default' }],
     },
 
-    // from https://github.com/simplabs/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/not-ok-find.input.js
+    // from https://github.com/Mainmatter/qunit-dom-codemod/blob/master/__testfixtures__/qunit-dom-codemod/not-ok-find.input.js
 
     {
       code: "assert.notOk(find('.foo'));",

@@ -42,7 +42,7 @@ module.exports = {
     docs: {
       description: "disallow use of `assert.dom('.foo:checked').exists()`",
       recommended: true,
-      url: 'https://github.com/simplabs/eslint-plugin-qunit-dom/blob/main/rules/no-checked-selector.md',
+      url: 'https://github.com/Mainmatter/eslint-plugin-qunit-dom/blob/main/rules/no-checked-selector.md',
     },
     fixable: 'code',
     schema: [],

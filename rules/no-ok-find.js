@@ -62,7 +62,7 @@ module.exports = {
     docs: {
       description: 'disallow use of `assert.ok(find(...))`',
       recommended: true,
-      url: 'https://github.com/simplabs/eslint-plugin-qunit-dom/blob/main/rules/no-ok-find.md',
+      url: 'https://github.com/Mainmatter/eslint-plugin-qunit-dom/blob/main/rules/no-ok-find.md',
     },
     fixable: 'code',
     schema: [],

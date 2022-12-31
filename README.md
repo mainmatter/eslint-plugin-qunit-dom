@@ -1,17 +1,17 @@
 eslint-plugin-qunit-dom
 ==============================================================================
 
+[![NPM version](https://img.shields.io/npm/v/eslint-plugin-qunit-dom.svg?style=flat)](https://npmjs.org/package/eslint-plugin-qunit-dom)
+
 An ESLint plugin for [qunit-dom] that automatically fixes the most common issues.
 
 [qunit-dom]: https://github.com/Mainmatter/qunit-dom
-
 
 Compatibility
 ------------------------------------------------------------------------------
 
 - [ESLint](https://eslint.org/) 7.0.0 or above
 - [Node.js](https://nodejs.org/) 12.x or above
-
 
 Installation
 ------------------------------------------------------------------------------
@@ -26,7 +26,6 @@ Or
 npm install --save-dev eslint-plugin-qunit-dom
 ```
 
-
 Usage
 ------------------------------------------------------------------------------
 
@@ -38,7 +37,7 @@ to the `extends` list:
 module.exports = {
   extends: [
     // ...
-    'plugin:qunit-dom/recommended' 
+    'plugin:qunit-dom/recommended'
   ],
 };
 ```
@@ -60,7 +59,6 @@ Each rule has emojis denoting:
 | [no-ok-find](./rules/no-ok-find.md) | disallow use of `assert.ok(find(...))` | ✅ | 🔧 |  |
 
 <!--RULES_TABLE_END-->
-
 
 License
 ------------------------------------------------------------------------------

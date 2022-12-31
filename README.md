@@ -5,13 +5,11 @@ An ESLint plugin for [qunit-dom] that automatically fixes the most common issues
 
 [qunit-dom]: https://github.com/Mainmatter/qunit-dom
 
-
 Compatibility
 ------------------------------------------------------------------------------
 
 - [ESLint](https://eslint.org/) 7.0.0 or above
 - [Node.js](https://nodejs.org/) 12.x or above
-
 
 Installation
 ------------------------------------------------------------------------------
@@ -26,7 +24,6 @@ Or
 npm install --save-dev eslint-plugin-qunit-dom
 ```
 
-
 Usage
 ------------------------------------------------------------------------------
 
@@ -38,7 +35,7 @@ to the `extends` list:
 module.exports = {
   extends: [
     // ...
-    'plugin:qunit-dom/recommended' 
+    'plugin:qunit-dom/recommended'
   ],
 };
 ```
@@ -46,21 +43,18 @@ module.exports = {
 Rules
 ------------------------------------------------------------------------------
 
-Each rule has emojis denoting:
+<!-- begin auto-generated rules list -->
 
-- ✅ if the rule is part of the `recommended` config
-- 🔧 if some problems reported by the rule are automatically fixable by the `--fix` [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) option
-- 💡 if some problems reported by the rule are manually fixable by editor [suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions)
+💼 Configurations enabled in.\
+✅ Set in the `recommended` configuration.\
+🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
-<!--RULES_TABLE_START-->
+| Name                                                | Description                                           | 💼 | 🔧 |
+| :-------------------------------------------------- | :---------------------------------------------------- | :- | :- |
+| [no-checked-selector](rules/no-checked-selector.md) | disallow use of `assert.dom('.foo:checked').exists()` | ✅  | 🔧 |
+| [no-ok-find](rules/no-ok-find.md)                   | disallow use of `assert.ok(find(...))`                | ✅  | 🔧 |
 
-| Name    | Description | ✅ | 🔧 | 💡 |
-|:--------|:------------|:---------------|:-----------|:---------------|
-| [no-checked-selector](./rules/no-checked-selector.md) | disallow use of `assert.dom('.foo:checked').exists()` | ✅ | 🔧 |  |
-| [no-ok-find](./rules/no-ok-find.md) | disallow use of `assert.ok(find(...))` | ✅ | 🔧 |  |
-
-<!--RULES_TABLE_END-->
-
+<!-- end auto-generated rules list -->
 
 License
 ------------------------------------------------------------------------------

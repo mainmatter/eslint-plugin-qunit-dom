@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "npm-run-all \"lint:*\"",
     "lint:js": "eslint .",
-    "lint:readme": "pnpm run update-readme --check",
+    "lint:readme": "eslint-doc-generator --check",
     "release": "release-it",
     "test": "jest",
     "update-readme": "eslint-doc-generator"

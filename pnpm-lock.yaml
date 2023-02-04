@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   eslint: 8.33.0
   eslint-config-prettier: 8.6.0
-  eslint-doc-generator: 1.4.2
+  eslint-doc-generator: 1.4.3
   eslint-plugin-eslint-comments: 3.2.0
   eslint-plugin-eslint-plugin: 5.0.8
   eslint-plugin-filenames: 1.3.2
@@ -20,7 +20,7 @@ specifiers:
 devDependencies:
   eslint: 8.33.0
   eslint-config-prettier: 8.6.0_eslint@8.33.0
-  eslint-doc-generator: 1.4.2_eslint@8.33.0
+  eslint-doc-generator: 1.4.3_eslint@8.33.0
   eslint-plugin-eslint-comments: 3.2.0_eslint@8.33.0
   eslint-plugin-eslint-plugin: 5.0.8_eslint@8.33.0
   eslint-plugin-filenames: 1.3.2_eslint@8.33.0
@@ -1650,9 +1650,9 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
 
-  /commander/9.5.0:
-    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
-    engines: {node: ^12.20.0 || >=14}
+  /commander/10.0.0:
+    resolution: {integrity: sha512-zS5PnTI22FIRM6ylNW8G4Ap0IEOyk62fhLSD0+uHRT9McRCLGpkVNvao4bjimpK/GShynyQkFFxHhwMcETmduA==}
+    engines: {node: '>=14'}
     dev: true
 
   /concat-map/0.0.1:
@@ -2066,8 +2066,8 @@ packages:
       eslint: 8.33.0
     dev: true
 
-  /eslint-doc-generator/1.4.2_eslint@8.33.0:
-    resolution: {integrity: sha512-axO5W9Nt/n/cppE75nJ8JVoqmzUyinzhNQ42vJFqjSnK8KeQoWE6IWqqT1wZly5uSneMuuWYYlCGicc0UeJp2g==}
+  /eslint-doc-generator/1.4.3_eslint@8.33.0:
+    resolution: {integrity: sha512-cn9KXE7xuKlxKi/9VbirR3cbz7W1geRObwWzZjJAnpTeNBoqA8Rj+lD8/HHHJ7PnOdaTrRyhhoYdCtxqq3U7Bw==}
     engines: {node: ^14.18.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     peerDependencies:
@@ -2076,7 +2076,7 @@ packages:
       '@typescript-eslint/utils': 5.49.0_eslint@8.33.0
       ajv: 8.12.0
       boolean: 3.2.0
-      commander: 9.5.0
+      commander: 10.0.0
       cosmiconfig: 8.0.0
       deepmerge: 4.3.0
       dot-prop: 7.2.0

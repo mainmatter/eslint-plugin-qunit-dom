@@ -53,6 +53,7 @@ Rules
 | :-------------------------------------------------- | :---------------------------------------------------- | :- | :- |
 | [no-checked-selector](rules/no-checked-selector.md) | disallow use of `assert.dom('.foo:checked').exists()` | ✅  | 🔧 |
 | [no-ok-find](rules/no-ok-find.md)                   | disallow use of `assert.ok(find(...))`                | ✅  | 🔧 |
+| [require-assertion](rules/require-assertion.md)     | require at least one assertion on `assert.dom()`      | ✅  | 🔧 |
 
 <!-- end auto-generated rules list -->
 

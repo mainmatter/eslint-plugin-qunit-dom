@@ -11,6 +11,7 @@ Object {
   "rules": Object {
     "qunit-dom/no-checked-selector": "error",
     "qunit-dom/no-ok-find": "error",
+    "qunit-dom/require-assertion": "error",
   },
 }
 `);

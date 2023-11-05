@@ -12,8 +12,8 @@ devDependencies:
     specifier: 9.0.0
     version: 9.0.0(eslint@8.52.0)
   eslint-doc-generator:
-    specifier: 1.5.3
-    version: 1.5.3(eslint@8.52.0)(typescript@5.2.2)
+    specifier: 1.5.4
+    version: 1.5.4(eslint@8.52.0)(typescript@5.2.2)
   eslint-plugin-eslint-comments:
     specifier: 3.2.0
     version: 3.2.0(eslint@8.52.0)
@@ -2219,8 +2219,8 @@ packages:
       eslint: 8.52.0
     dev: true
 
-  /eslint-doc-generator@1.5.3(eslint@8.52.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-QVHi3ljaKXHr86L640rYgh0tJY/CTYncy/NbsFpzHu7ENwb0Dc/2xTESfbYeOl6/ILXqJQMMjNfQ4euEi7Rcjw==}
+  /eslint-doc-generator@1.5.4(eslint@8.52.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-G4wcX2QcOEA0cZnk4zDx2VKVkktv8IGJd1D3TZ2HP0PBFxh56Eisq5bXkukHwBqR4GllzYrpvaotRBt9zNsfbQ==}
     engines: {node: ^14.18.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     peerDependencies:

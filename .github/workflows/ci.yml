@@ -25,7 +25,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 22.x
           cache: 'pnpm'
 
       - run: pnpm install
@@ -71,7 +71,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 22.x
           # cache disabled because the extra `pnpm add` might conflict with the
           # `test-node` job cache, and there is currently no way to influence
           # the cache key

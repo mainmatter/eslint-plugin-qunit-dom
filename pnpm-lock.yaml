@@ -18,8 +18,8 @@ devDependencies:
     specifier: 3.2.0
     version: 3.2.0(eslint@8.57.1)
   eslint-plugin-eslint-plugin:
-    specifier: 6.5.0
-    version: 6.5.0(eslint@8.57.1)
+    specifier: 7.3.2
+    version: 7.3.2(eslint@8.57.1)
   eslint-plugin-filenames:
     specifier: 1.3.2
     version: 1.3.2(eslint@8.57.1)
@@ -2568,11 +2568,11 @@ packages:
       ignore: 5.3.1
     dev: true
 
-  /eslint-plugin-eslint-plugin@6.5.0(eslint@8.57.1):
-    resolution: {integrity: sha512-DT8YpcXDtMBcBZN39JlkHGurHKU8eYFLavTrnowQLeNwqe/diRUsllsftgD/7dZ2/ItabNLLF2/EYapE1H+G7Q==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+  /eslint-plugin-eslint-plugin@7.3.2(eslint@8.57.1):
+    resolution: {integrity: sha512-odUwjaeon0s3W96vAmZf13XbTEGKnnXStnRykwM3XysTce7ZI7C8AJRn47OFJMdDNVtG/jLb/gFk0Wvj9zkSbQ==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
     peerDependencies:
-      eslint: '>=8.23.0'
+      eslint: '>=9.0.0'
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.1)
       eslint: 8.57.1

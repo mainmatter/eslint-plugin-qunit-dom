@@ -9,7 +9,6 @@ on:
 
 env:
   FORCE_COLOR: 1
-  PNPM_VERSION: 6.15.0
 
 jobs:
   lint:
@@ -17,15 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
+      - uses: actions/checkout@v7
 
-      - uses: pnpm/action-setup@v2.4.1
+      - uses: pnpm/action-setup@v6
         with:
           version: ${{ env.PNPM_VERSION }}
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: 14.x
+          node-version: 22.x
           cache: 'pnpm'
 
       - run: pnpm install
@@ -34,19 +33,17 @@ jobs:
   test-node:
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [22.x, 24.x]
 
     name: Tests (Node.js ${{ matrix.node-version }})
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
+      - uses: actions/checkout@v7
 
-      - uses: pnpm/action-setup@v2.4.1
-        with:
-          version: ${{ env.PNPM_VERSION }}
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
@@ -63,15 +60,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
+      - uses: actions/checkout@v7
 
-      - uses: pnpm/action-setup@v2.4.1
+      - uses: pnpm/action-setup@v6
         with:
           version: ${{ env.PNPM_VERSION }}
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: 14.x
+          node-version: 22.x
           # cache disabled because the extra `pnpm add` might conflict with the
           # `test-node` job cache, and there is currently no way to influence
           # the cache key

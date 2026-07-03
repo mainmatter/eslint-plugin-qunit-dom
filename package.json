@@ -32,8 +32,9 @@
   "peerDependencies": {
     "eslint": "^7.11.0 || ^8.0.0"
   },
+  "packageManager": "pnpm@11.9.0",
   "engines": {
-    "node": "12.* || 14.* || >= 16.*"
+    "node": "22.* || >= 24.*"
   },
   "changelog": {
     "repo": "Mainmatter/eslint-plugin-qunit-dom"

@@ -1,5 +1,43 @@
 # Changelog
 
+## Release (2026-07-03)
+
+* eslint-plugin-qunit-dom 1.0.0 (major)
+
+#### :boom: Breaking Change
+* `eslint-plugin-qunit-dom`
+  * [#445](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/445) Drop support for Node < 22 ([@nickschot](https://github.com/nickschot))
+
+#### :rocket: Enhancement
+* `eslint-plugin-qunit-dom`
+  * [#336](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/336) Add require-assertion rule ([@backspace](https://github.com/backspace))
+  * [#220](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/220) Rebrand simplabs to Mainmatter ([@BobrImperator](https://github.com/BobrImperator))
+  * [#37](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/37) Reimplement `no-checked-selector` rule ([@Turbo87](https://github.com/Turbo87))
+  * [#36](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/36) no-ok-find: Add support for `assert.equal(find(...).length, 1)` assertions ([@Turbo87](https://github.com/Turbo87))
+
+#### :bug: Bug Fix
+* `eslint-plugin-qunit-dom`
+  * [#450](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/450) fix the repo - no caps ([@mansona](https://github.com/mansona))
+  * [#35](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/35) no-ok-find: Fix parent scope guards ([@Turbo87](https://github.com/Turbo87))
+  * [#34](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/34) no-ok-find: Fix false positive due to incorrect regex ([@Turbo87](https://github.com/Turbo87))
+
+#### :memo: Documentation
+* `eslint-plugin-qunit-dom`
+  * [#249](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/249) Automate docs with eslint-doc-generator ([@bmish](https://github.com/bmish))
+
+#### :house: Internal
+* `eslint-plugin-qunit-dom`
+  * [#448](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/448) start using release-plan ([@mansona](https://github.com/mansona))
+  * [#33](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/33) no-ok-find: Simplify error messages ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 6
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+- Bryan Mishkin ([@bmish](https://github.com/bmish))
+- Buck Doyle ([@backspace](https://github.com/backspace))
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
 
 
 ## v0.2.0 (2021-09-16)

@@ -1,4 +1,8 @@
 const { RuleTester } = require('eslint');
+import { describe, it } from 'vitest';
+
+RuleTester.it = it;
+RuleTester.describe = describe;
 
 const rule = require('./require-assertion');
 

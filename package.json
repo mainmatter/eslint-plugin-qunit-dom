@@ -1,14 +1,13 @@
 {
   "name": "eslint-plugin-qunit-dom",
   "version": "0.2.0",
+  "repository": "https://github.com/Mainmatter/eslint-plugin-qunit-dom/",
   "license": "MIT",
   "main": "index.js",
-  "repository": "https://github.com/Mainmatter/eslint-plugin-qunit-dom/",
   "scripts": {
     "lint": "pnpm run \"/^lint:.*/\"",
     "lint:js": "eslint .",
     "lint:readme": "eslint-doc-generator --check",
-    "release": "release-it",
     "test": "vitest",
     "update-readme": "eslint-doc-generator"
   },
@@ -23,8 +22,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "5.5.6",
     "prettier": "3.8.4",
-    "release-it": "15.11.0",
-    "release-it-lerna-changelog": "5.0.0",
+    "release-plan": "^0.18.0",
     "vitest": "^4.1.9"
   },
   "peerDependencies": {

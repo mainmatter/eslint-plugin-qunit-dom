@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-qunit-dom",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "repository": "https://github.com/Mainmatter/eslint-plugin-qunit-dom/",
   "license": "MIT",
   "main": "index.js",

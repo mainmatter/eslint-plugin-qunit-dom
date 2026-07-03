@@ -1,0 +1,34 @@
+{
+  "solution": {
+    "eslint-plugin-qunit-dom": {
+      "impact": "major",
+      "oldVersion": "0.2.0",
+      "newVersion": "1.0.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
+        },
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :memo: Documentation"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2026-07-03)\n\n* eslint-plugin-qunit-dom 1.0.0 (major)\n\n#### :boom: Breaking Change\n* `eslint-plugin-qunit-dom`\n  * [#445](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/445) Drop support for Node < 22 ([@nickschot](https://github.com/nickschot))\n\n#### :rocket: Enhancement\n* `eslint-plugin-qunit-dom`\n  * [#336](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/336) Add require-assertion rule ([@backspace](https://github.com/backspace))\n  * [#220](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/220) Rebrand simplabs to Mainmatter ([@BobrImperator](https://github.com/BobrImperator))\n  * [#37](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/37) Reimplement `no-checked-selector` rule ([@Turbo87](https://github.com/Turbo87))\n  * [#36](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/36) no-ok-find: Add support for `assert.equal(find(...).length, 1)` assertions ([@Turbo87](https://github.com/Turbo87))\n\n#### :bug: Bug Fix\n* `eslint-plugin-qunit-dom`\n  * [#35](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/35) no-ok-find: Fix parent scope guards ([@Turbo87](https://github.com/Turbo87))\n  * [#34](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/34) no-ok-find: Fix false positive due to incorrect regex ([@Turbo87](https://github.com/Turbo87))\n\n#### :memo: Documentation\n* `eslint-plugin-qunit-dom`\n  * [#249](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/249) Automate docs with eslint-doc-generator ([@bmish](https://github.com/bmish))\n\n#### :house: Internal\n* `eslint-plugin-qunit-dom`\n  * [#448](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/448) start using release-plan ([@mansona](https://github.com/mansona))\n  * [#33](https://github.com/mainmatter/eslint-plugin-qunit-dom/pull/33) no-ok-find: Simplify error messages ([@Turbo87](https://github.com/Turbo87))\n\n#### Committers: 6\n- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))\n- Bryan Mishkin ([@bmish](https://github.com/bmish))\n- Buck Doyle ([@backspace](https://github.com/backspace))\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Nick Schot ([@nickschot](https://github.com/nickschot))\n- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))\n"
+}

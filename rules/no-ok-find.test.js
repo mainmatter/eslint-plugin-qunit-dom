@@ -1,5 +1,10 @@
 const { RuleTester } = require('eslint');
 
+import { describe, it } from 'vitest';
+
+RuleTester.it = it;
+RuleTester.describe = describe;
+
 const rule = require('./no-ok-find');
 
 let ruleTester = new RuleTester({

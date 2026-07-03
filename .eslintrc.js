@@ -5,13 +5,11 @@ module.exports = {
   parserOptions: {
     ecmaVersion: '2019',
   },
-  plugins: ['eslint-plugin', 'filenames', 'import', 'jest', 'node', 'prettier'],
+  plugins: ['eslint-plugin', 'filenames', 'import', 'node', 'prettier'],
   extends: [
     'eslint:recommended',
     'plugin:eslint-comments/recommended',
     'plugin:eslint-plugin/all',
-    'plugin:jest/recommended',
-    'plugin:jest/style',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:node/recommended',
@@ -26,8 +24,15 @@ module.exports = {
   overrides: [
     {
       // Test files:
-      files: ['tests/**/*.js'],
-      env: { jest: true },
+      files: ['**/*.test.js'],
+      parserOptions: {
+        ecmaVersion: '2019',
+        sourceType: 'module',
+      },
+      rules: {
+        'node/no-unsupported-features/es-syntax': 'off',
+        'import/named': 'off',
+      },
     },
   ],
 };

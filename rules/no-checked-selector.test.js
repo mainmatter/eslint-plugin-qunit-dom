@@ -1,5 +1,10 @@
 const { RuleTester } = require('eslint');
 
+RuleTester.it = it;
+RuleTester.describe = describe;
+
+import { describe, it } from 'vitest';
+
 const rule = require('./no-checked-selector');
 
 let ruleTester = new RuleTester({

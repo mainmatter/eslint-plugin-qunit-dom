@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2026-07-03)
 
 * eslint-plugin-qunit-dom 1.0.0 (major)
